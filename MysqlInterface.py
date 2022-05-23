@@ -4,8 +4,11 @@ import streamlit as st
 import mysql.connector as connection
 
 import pandas as pd
+def init_connection():
+    return mysql.connector.connect(**st.secrets["mysql"])
 
-mydb = connection.connect(host=st.secrets["host"], database = st.secrets["database"],user=st.secrets["user"], passwd=st.secrets["password"])
+mydb = init_connection()
+
 
 cur= mydb.cursor(buffered=True)
 from datetime import datetime

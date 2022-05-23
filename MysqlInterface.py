@@ -4,6 +4,7 @@ import streamlit as st
 import mysql.connector as connection
 
 import pandas as pd
+@st.experimental_singleton
 def init_connection():
     return connection.connect(**st.secrets["mysql"])
 

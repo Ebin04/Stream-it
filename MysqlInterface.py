@@ -5,7 +5,7 @@ import mysql.connector as connection
 
 import pandas as pd
 def init_connection():
-    return mysql.connector.connect(**st.secrets["mysql"])
+    return connection.connect(**st.secrets["mysql"])
 
 mydb = init_connection()
 
